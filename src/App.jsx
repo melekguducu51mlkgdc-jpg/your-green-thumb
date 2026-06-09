@@ -104,22 +104,26 @@ function Screen({ children, footer }) {
   return (
     <div className="screen">
       <div className="screen-content fade-in">{children}</div>
-      <div className="footer">{footer}</div>
+      {footer && <div className="footer">{footer}</div>}
     </div>
   );
 }
 
 function Welcome({ next }) {
   return (
-    <Screen footer={<Button onClick={next}>Start plant care plan →</Button>}>
+    <Screen>
       <div className="brand">🌿 Your Green Thumb</div>
       <div className="hero-card">
         <div className="hero-emoji">🪴</div>
         <h1>Plant care without the guesswork.</h1>
         <p>
-          Add a plant, get simple care tips, and see when it needs water, light,
-          or attention.
-        </p>
+  Add a plant, get simple care tips, and see when it needs water, light,
+  or attention.
+</p>
+
+<div className="welcome-cta">
+  <Button onClick={next}>Start plant care plan →</Button>
+</div>
       </div>
       <div className="feature-grid">
         <div className="feature-card">
